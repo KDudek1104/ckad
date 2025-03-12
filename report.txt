@@ -1,0 +1,118 @@
+]633;E;date;f15869fa-8197-4762-9ece-3f13abe1a78c]633;CTue Mar 11 16:16:35 UTC 2025
+NAME                                READY   STATUS    RESTARTS   AGE
+my-app-deployment-d57fd497f-hn6f7   1/1     Running   0          81s
+my-app-deployment-d57fd497f-jlb26   1/1     Running   0          81s
+]633;E;date;f15869fa-8197-4762-9ece-3f13abe1a78c]633;CTue Mar 11 16:17:07 UTC 2025
+NAME                                READY   STATUS    RESTARTS   AGE
+my-app-deployment-d57fd497f-5x476   1/1     Running   0          11s
+my-app-deployment-d57fd497f-hn6f7   1/1     Running   0          113s
+my-app-deployment-d57fd497f-jlb26   1/1     Running   0          113s
+my-app-deployment-d57fd497f-zg9cc   1/1     Running   0          11s
+Name:                   my-app-deployment
+Namespace:              default
+CreationTimestamp:      Tue, 11 Mar 2025 16:15:14 +0000
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=my-app
+Replicas:               4 desired | 4 updated | 4 total | 4 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=my-app
+  Containers:
+   my-app:
+    Image:         my-app:v1
+    Port:          5000/TCP
+    Host Port:     0/TCP
+    Environment:   <none>
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   my-app-deployment-d57fd497f (4/4 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  113s  deployment-controller  Scaled up replica set my-app-deployment-d57fd497f to 2
+  Normal  ScalingReplicaSet  11s   deployment-controller  Scaled up replica set my-app-deployment-d57fd497f to 4 from 2
+]633;E;date;f15869fa-8197-4762-9ece-3f13abe1a78c]633;CTue Mar 11 16:19:27 UTC 2025
+Name:                   my-app-deployment
+Namespace:              default
+CreationTimestamp:      Tue, 11 Mar 2025 16:15:14 +0000
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=my-app
+Replicas:               4 desired | 4 updated | 4 total | 4 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        10
+RollingUpdateStrategy:  1 max unavailable, 1 max surge
+Pod Template:
+  Labels:  app=my-app
+  Containers:
+   my-app:
+    Image:         my-app:v1
+    Port:          5000/TCP
+    Host Port:     0/TCP
+    Environment:   <none>
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   my-app-deployment-d57fd497f (4/4 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  4m13s  deployment-controller  Scaled up replica set my-app-deployment-d57fd497f to 2
+  Normal  ScalingReplicaSet  2m31s  deployment-controller  Scaled up replica set my-app-deployment-d57fd497f to 4 from 2
+Wersja 1.0.0]633;E;date;f15869fa-8197-4762-9ece-3f13abe1a78c]633;CTue Mar 11 16:23:08 UTC 2025
+Name:                   my-app-deployment
+Namespace:              default
+CreationTimestamp:      Tue, 11 Mar 2025 16:15:14 +0000
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 2
+Selector:               app=my-app
+Replicas:               4 desired | 2 updated | 5 total | 3 available | 2 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        10
+RollingUpdateStrategy:  1 max unavailable, 1 max surge
+Pod Template:
+  Labels:  app=my-app
+  Containers:
+   my-app:
+    Image:         my-app:v2
+    Port:          5000/TCP
+    Host Port:     0/TCP
+    Environment:   <none>
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    ReplicaSetUpdated
+OldReplicaSets:  my-app-deployment-d57fd497f (3/3 replicas created)
+NewReplicaSet:   my-app-deployment-6598958f86 (2/2 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  7m54s  deployment-controller  Scaled up replica set my-app-deployment-d57fd497f to 2
+  Normal  ScalingReplicaSet  6m12s  deployment-controller  Scaled up replica set my-app-deployment-d57fd497f to 4 from 2
+  Normal  ScalingReplicaSet  9s     deployment-controller  Scaled up replica set my-app-deployment-6598958f86 to 1
+  Normal  ScalingReplicaSet  9s     deployment-controller  Scaled down replica set my-app-deployment-d57fd497f to 3 from 4
+  Normal  ScalingReplicaSet  9s     deployment-controller  Scaled up replica set my-app-deployment-6598958f86 to 2 from 1
+Wersja 2

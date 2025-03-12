@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: my-app
+  revisionHistoryLimit: 3 
+  progressDeadlineSeconds: 300 
+  minReadySeconds: 10 
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1 
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: my-app:v2
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
